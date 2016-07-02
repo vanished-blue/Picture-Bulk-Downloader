@@ -1,0 +1,51 @@
+body {
+  width: 600px;
+  max-height: 400px;
+}
+
+.action label {
+  margin: 0 10px 0 0;
+}
+
+.image-gallery {
+  a {
+    display: inline-block;
+    border: 2px solid blanchedalmond;
+    margin: 2px;
+    cursor: pointer;
+  }
+
+  img {
+    max-width: 300px;
+
+    &.selected {
+      -webkit-filter: blur(2px);
+    }
+  }
+}
+
+.rock {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgba(100, 100, 100, .3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s;
+
+  &:hover {
+    background-color: rgba(100, 100, 100, .7);
+  }
+}
+
+#up-rock {
+  top: 18px;
+  right: 20px;
+}
+
+#bottom-rock {
+  bottom: 18px;
+  right: 20px;
+}

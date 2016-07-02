@@ -1,0 +1,49 @@
+//in background.js
+
+chrome.app.runtime.onLaunched.addListener(function() {
+  chrome.app.window.create('build/index.html', {
+    'bounds': {
+      'width': Math.round(window.screen.availWidth*0.9),
+      'height': Math.round(window.screen.availHeight*0.9)
+    }
+  }, function(win) {
+    win.maximize();
+  });
+});`
+
+
+let streams;
+
+streams = {
+    browserAction: {
+        onClicked: $.Callbacks()
+    }
+};
+
+chrome.browserAction.onClicked.addListener(() => {
+    streams.browserAction.onClicked.fire();
+});
+
+streams.browserAction.onClicked.add(() => {
+    console.log('browser action clicked');
+});
+
+ls -al ~/.ssh
+
+git config -l
+git config -l --global
+git config --global push.default simple
+git push -u origin master
+git push
+
+git remote set-url --delete origin https://github.com/vanished-blue/Picture-Bulk-Downloader.git
+git remote set-url --add origin git@github.com:vanished-blue/Picture-Bulk-Downloader.git
+
+
+"bower_components/angular-sails/dist/angular-sails.min.js"
+"bower_components/ngstorage/ngStorage.min.js"
+"bower_components/rxjs/dist/rx.all.min.js"
+"bower_components/rx-angular/dist/rx.angular.min.js"
+
+browserify只适用于commonjs模块，不适用于amd模块
+估计要使用webpack

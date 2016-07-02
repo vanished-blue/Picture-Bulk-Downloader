@@ -3,23 +3,36 @@
   "version": "0.1",
   "name": "保存图片",
   "description": "保存图片",
-
   "browser_action": {
     "default_icon": {},
     "default_title": "Save Pictures",
-    "default_popup": ""
+    "default_popup": "dist/popup.html"
   },
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
-    "js": ["script.js"],
+    "js": [
+      "node_modules/underscore/underscore-min.js",
+      "node_modules/jquery/dist/jquery.slim.min.js",
+      "promise.js",
+      "content_script.js"
+    ],
     "run_at": "document_end"
   }],
   "background": {
-    "scripts": ["node_modules/jquery/dist/jquery.min.js", "background.js"]
+    "scripts": [
+      "node_modules/jquery/dist/jquery.slim.min.js",
+      "promise.js",
+      "background.js"
+    ]
   },
   "permissions": [
     "tabs",
     "activeTab",
-    "http://*/"
+    "http://*/*",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  "web_accessible_resources": [
+    "images/*.png"
   ]
 }

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture Bulk Downloader</title>
+    <!--<link rel="stylesheet" href="bower_components/foundation/foundation.css">-->
+    <link rel="stylesheet" href="node_modules/angular/angular-csp.css">
+    <link rel="stylesheet" href="popup.css">
+    <!--todo:normalize.css,foundation.css-->
+    <!--todo:webpack-->
+    <!--todo:jade-->
+    <!--todo:scss-->
+    <!--todo:chrome-extension-generator-->
+    <!--todo:change jQuery animation to angular animation?-->
+</head>
+<body ng-app="app">
+    <h1>Picture Bulk Downloader</h1>
+    <div ng-controller="ImageCtrl" ng-init="fetch()">
+        <div class="action">
+            <label>
+                <span>宽度</span>
+                <input type="range" max="500" value="{{$storage.minWidth}}" ng-model="$storage.minWidth" ng-change="filter()" ng-model-options="{updateOn: 'change'}">
+                <span>{{$storage.minWidth}}</span>
+            </label>
+            <label>
+                <span>高度</span>
+                <input type="range" max="500" value="{{$storage.minWidth}}" ng-model="$storage.minHeight" ng-change="filter()" ng-model-options="{updateOn: 'change'}">
+                <span>{{$storage.minHeight}}</span>
+            </label>
+        </div>
+        <div class="action">
+            <button ng-click="downloadBulk()">下载</button>
+            <button ng-click="all()">全选</button>
+            <button ng-click="complement()">反选</button>
+            <span class="selected-count">共选中{{selectedCount}}张图片</span>
+        </div>
+        <div class="image-gallery">
+            <a ng-repeat="image in images" ng-click="toggleSelect($index)">
+                <img ng-class="{selected:image.selected}" ng-src="{{image.src}}" alt="">
+            </a>
+        </div>
+    </div>
+    <div ng-controller="BackToTopCtrl">
+        <div id="up-rock" class="rock" ng-click="top()">Top</div>
+        <div id="bottom-rock" class="rock" ng-click="top()">Top</div>
+    </div>
+    <!--<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>-->
+    <script src="node_modules/underscore/underscore-min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/ngstorage/ngStorage.min.js"></script>
+    <script src="src/promise.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

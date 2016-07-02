@@ -1,0 +1,33 @@
+{
+  "name": "picutre-bulk-downloader",
+  "version": "1.0.0",
+  "description": "A chrome extension to download bulk pictures.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanished-blue/Picture-Bulk-Downloader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanished-blue/Picture-Bulk-Downloader/issues"
+  },
+  "homepage": "https://github.com/vanished-blue/Picture-Bulk-Downloader#readme",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-scss": "^1.4.0",
+    "gulp-uglify": "^1.5.4",
+    "jquery": "^3.0.0",
+    "lodash": "^4.13.1",
+    "ngstorage": "^0.3.10",
+    "underscore": "^1.8.3",
+    "zepto": "^1.0.1"
+  }
+}
