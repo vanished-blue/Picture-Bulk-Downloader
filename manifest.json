@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "version": "0.1",
+  "name": "保存图片",
+  "description": "保存图片",
+
+  "browser_action": {
+    "default_icon": {},
+    "default_title": "Save Pictures",
+    "default_popup": ""
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["script.js"],
+    "run_at": "document_end"
+  }],
+  "background": {
+    "scripts": ["node_modules/jquery/dist/jquery.min.js", "background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "http://*/"
+  ]
+}
